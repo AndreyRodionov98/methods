@@ -38,17 +38,17 @@ public static void printIsLeapYear(int year){
 
     public static void calculateDeliveryDays(int deliveryDistance) {
 
-        int result = 1;
+        int results = 1;
         if (deliveryDistance > 20) {
-            result++;
+            results++;
         }
         if (deliveryDistance > 60) {
-            result++;
+            results++;
         } else {
             System.out.println("Невозможно рассчитать срок доставки");
         }
 
-        System.out.println("Потребуется дня :" + result);
+        System.out.println("Потребуется дня :" + results);
     }
 
 
