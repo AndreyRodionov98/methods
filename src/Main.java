@@ -1,5 +1,6 @@
-public class Main {
+import javax.swing.*;
 
+public class Main {
 
 
 public static void printIsLeapYear(int year){
@@ -7,7 +8,7 @@ public static void printIsLeapYear(int year){
     printIsLeapYearResult(year, yearIsLeap);
 }
     private static boolean isLeap(int year) {
-        return year % 4 == 0 && year % 100 != 0 && year % 400 == 0;
+        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
     }
 
     private static void printIsLeapYearResult(int year, boolean yearIsLeap) {
@@ -39,17 +40,15 @@ public static void printIsLeapYear(int year){
     public static void calculateDeliveryDays(int deliveryDistance) {
 
         int results = 1;
-        if (deliveryDistance > 20) {
+        if (deliveryDistance > 20 && deliveryDistance<60) {
             results++;
-        }
-        if (deliveryDistance > 60) {
+        System.out.println("Потребуется дня :" + results);}
+        else if (deliveryDistance > 60){
             results++;
-        } else {
-            System.out.println("Невозможно рассчитать срок доставки");
-        }
 
-        System.out.println("Потребуется дня :" + results);
-    }
+        }
+        System.out.println("Невозможно рассчитать срок доставки");}
+
 
 
     public static void main(String[] args) {
