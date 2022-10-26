@@ -27,8 +27,12 @@ public static void printIsLeapYear(int year){
     public static void recommendApplicationVersion(int clientOS, int deviceYear) {
         boolean deviceIsOld = IsDeviceOld(deviceYear);
         System.out.println(" Установите ");
-        if (deviceIsOld) {
-            System.out.println("lite");
+        if (deviceIsOld && deviceYear<2022) {
+
+            System.out.println("lite");}
+            else if (deviceIsOld && deviceYear>2021) {
+                System.out.println("обычную");
+
         }
         System.out.println("версию для ");
         if (clientOS == 0) {
@@ -39,28 +43,28 @@ public static void printIsLeapYear(int year){
 
     public static void calculateDeliveryDays(int deliveryDistance) {
 
-        int results = 1;
-        if (deliveryDistance > 20 && deliveryDistance<60) {
+        int results = 0;
+        if (deliveryDistance > 0 && deliveryDistance<60) {
             results++;
         System.out.println("Потребуется дня :" + results);}
         else if (deliveryDistance > 60){
             results++;
 
-        }
-        System.out.println("Невозможно рассчитать срок доставки");}
+
+        System.out.println("Невозможно рассчитать срок доставки");}}
 
 
 
     public static void main(String[] args) {
         System.out.println("Task 1");
-        printIsLeapYear(2022);
+        printIsLeapYear(2016);
 
 
         System.out.println("Task 2");
-        recommendApplicationVersion(1, 2015);
+        recommendApplicationVersion(1, 2000);
         System.out.println("Task 3 ");
 
-        calculateDeliveryDays(76);
+        calculateDeliveryDays(10);
 
 
     }
